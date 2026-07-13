@@ -1,9 +1,13 @@
-Starting Here : 
+### 🏴 Level 0 → Level 1
+* **Objective:** Find the password hidden in a file named `readme` in the home directory.
+* **Concepts Learned:** `ls`, `cat`, SSH basics.
 
-Stage 0->1:
-Learned about | cat , ls 
+<details>
+<summary><b>View Writeup & Solution</b></summary>
 
-found out password using cat inside a file
+```bash
+# List files to find the target
+ls -la
 
-
-Stage 1->2:
+# Read the contents of the readme file
+cat readme
