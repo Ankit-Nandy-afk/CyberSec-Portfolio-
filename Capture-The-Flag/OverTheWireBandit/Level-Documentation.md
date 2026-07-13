@@ -1,24 +1,24 @@
-# 🗺️ OverTheWire: Bandit Wargame Chronicles
+# ~ OverTheWire: Bandit Wargame
 
-> A comprehensive log of my journey mastering Linux fundamentals, security concepts, and shell wizardry through the classic OverTheWire Bandit challenges.
+>A Comprehensive Log of mine for : Bandit Wargame 
 
 ---
 
-## 📊 Campaign Progress
+## ~ Campaign Progress
 
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 | Objective | Progress Bar | Current Status |
-| :--- |:-------------| :--- |
-| **Bandit Levels 0 → 34** | `██████████████████████████████`           | 🚀 Active Operation |
+| :--- |:-------------|:---------------|
+| **Bandit Levels 0 → 34** | `██████████████████████████████`           | Completed      |
 
 ---
 
-## 🥷 Mission Log & Technical Writeups
+## ~ Mission Log & Technical Writeups
 
-### 🟢 Foundation Levels (0 → 10)
+### 1) Foundation Levels (0 → 10)
 
 <details>
 <summary><b>Level 0 → Level 1: The Absolute Basics</b></summary>
@@ -102,7 +102,7 @@
 
 ---
 
-### 🟡 Intermediate Core (10 → 20)
+### 2) Intermediate Core (10 → 20)
 
 <details>
 <summary><b>Level 10 → Level 11: Base64 Decoding</b></summary>
@@ -186,7 +186,7 @@
 
 ---
 
-### 🟠 Advanced Scripting & Processes (20 → 30)
+### 3) Advanced Scripting & Processes (20 → 30)
 
 <details>
 <summary><b>Level 20 → Level 21: Port Listeners</b></summary>
@@ -270,7 +270,7 @@
 
 ---
 
-### 🔴 Expert Levels (30 → 34)
+### 4) Expert Levels (30 → 34)
 
 <details>
 <summary><b>Level 30 → Level 31: Auditing Git Tags</b></summary>
