@@ -1,1 +1,1 @@
-yooo this readme sucks
+nvm this doesnt suck
