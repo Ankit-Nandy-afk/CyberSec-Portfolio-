@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 import argparse
 from datetime import datetime
 import os
-import requests  # NEW: Used to make requests to the online database
+import requests
 
 
 def run_nmap_scan(target):
