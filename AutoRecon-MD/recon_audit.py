@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 import argparse
 from datetime import datetime
 import os
+import requests  # NEW: Used to make requests to the online database
 
 
 def run_nmap_scan(target):
@@ -13,6 +14,7 @@ def run_nmap_scan(target):
     command = ["nmap", "-sS", "-sV", "-T4", "-oX", xml_file, target]
 
     try:
+        # Note: We need 'sudo' in terminal for SYN scan
         subprocess.run(command, check=True, stdout=subprocess.DEVNULL)
         print(f"[+] Nmap scan complete. Raw data saved to {xml_file}")
         return xml_file
@@ -39,7 +41,6 @@ def parse_nmap_xml(xml_file):
                     port_id = port.attrib.get('portid')
                     protocol = port.attrib.get('protocol')
 
-                    # Extract service info if available
                     service = port.find('service')
                     service_name = service.attrib.get('name') if service is not None else "Unknown"
                     service_version = service.attrib.get('version') if service is not None else ""
@@ -49,10 +50,49 @@ def parse_nmap_xml(xml_file):
                         "port": port_id,
                         "protocol": protocol,
                         "service": service_name,
-                        "version": f"{service_product} {service_version}".strip()
+                        "product": service_product,
+                        "version": service_version
                     })
     return open_ports
 
+
+# ================= NEW: VULNERABILITY API LOOKUP ENGINE =================
+def fetch_cves_for_service(product, version):
+    """
+    Queries Shodan's free CVEDB API to check for public CVEs
+    associated with the discovered service name and version.
+    """
+    if not product or not version:
+        return []
+
+    # We build a CPE (Common Platform Enumeration) string.
+    # This is a standardized way of saying: "Software Product : Version"
+    cpe = f"cpe:2.3:a::{product.lower()}:{version.lower()}"
+    api_url = f"https://cvedb.shodan.io/cves?cpe23={cpe}"
+
+    try:
+        print(f"[*] Querying vulnerability database for {product} {version}...")
+        response = requests.get(api_url, timeout=10)
+
+        if response.status_code == 200:
+            data = response.json()
+            # Extract up to 3 major vulnerabilities to keep our report clean
+            cves = []
+            matches = data.get("matches", [])
+            for item in matches[:3]:
+                cves.append({
+                    "id": item.get("cve_id"),
+                    "summary": item.get("summary", "No description available."),
+                    "severity": item.get("cvss", "N/A")
+                })
+            return cves
+    except Exception as e:
+        print(f"[-] API query failed for {product}: {e}")
+
+    return []
+
+
+# =========================================================================
 
 def generate_markdown_report(target, open_ports):
     report_name = f"Recon_Report_{target.replace('.', '_')}.md"
@@ -67,19 +107,30 @@ def generate_markdown_report(target, open_ports):
         f.write(f"An automated perimeter scan was conducted against `{target}`. ")
         f.write(f"The scan successfully identified **{len(open_ports)}** open ports exposing network services.\n\n")
 
-        f.write("## 2. Attack Surface Mapping\n")
-        f.write("| Port | Protocol | Service | Version/Product |\n")
-        f.write("|------|----------|---------|-----------------|\n")
+        f.write("## 2. Attack Surface Mapping & CVE Correlation\n")
+        f.write("| Port | Protocol | Service | Version | Known Vulnerabilities Found |\n")
+        f.write("|------|----------|---------|---------|-----------------------------|\n")
 
         for p in open_ports:
-            version_text = p['version'] if p['version'] else "Version hidden/Unknown"
-            f.write(f"| {p['port']} | {p['protocol'].upper()} | {p['service']} | {version_text} |\n")
+            product_name = p['product'] if p['product'] else p['service']
+            version_text = p['version'] if p['version'] else "Unknown"
+
+            # Fetch real vulnerabilities for this port
+            cve_list = fetch_cves_for_service(p['product'], p['version'])
+
+            if cve_list:
+                cve_details = ""
+                for cve in cve_list:
+                    cve_details += f"🔴 **{cve['id']}** (CVSS: {cve['severity']})<br>*{cve['summary'][:100]}...*<br><br>"
+            else:
+                cve_details = "🟢 No immediate CVEs found in quick query."
+
+            f.write(f"| {p['port']} | {p['protocol'].upper()} | {p['service']} | {version_text} | {cve_details} |\n")
 
         f.write("\n## 3. Next Steps & Recommendations\n")
+        f.write("- **Service Patching:** Prioritize upgrading any services flagged with active CVEs (marked with 🔴).\n")
         f.write(
-            "- **Service Auditing:** Cross-reference the identified versions against the National Vulnerability Database (NVD) for known CVEs.\n")
-        f.write(
-            "- **Firewall Rules:** Ensure any exposed administrative ports (e.g., SSH, RDP) are restricted to authorized IP addresses only.\n")
+            "- **Port Minimization:** Disable or filter any exposed ports that are not strictly necessary for production operations.\n")
 
     print(f"[+] Professional Markdown report generated: {report_name}")
 
@@ -89,15 +140,9 @@ if __name__ == "__main__":
     parser.add_argument("target", help="The IP address or domain to scan (e.g., 192.168.1.1)")
     args = parser.parse_args()
 
-    # Step 1: Scan
     xml_output = run_nmap_scan(args.target)
-
-    # Step 2: Parse
     extracted_data = parse_nmap_xml(xml_output)
-
-    # Step 3: Report
     generate_markdown_report(args.target, extracted_data)
 
-    # Optional Cleanup
     if os.path.exists(xml_output):
         os.remove(xml_output)
