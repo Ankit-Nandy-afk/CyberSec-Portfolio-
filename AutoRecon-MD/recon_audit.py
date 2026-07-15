@@ -127,7 +127,7 @@ def generate_markdown_report(target, open_ports):
             f.write(f"| {p['port']} | {p['protocol'].upper()} | {p['service']} | {version_text} | {cve_details} |\n")
 
         f.write("\n## 3. Next Steps & Recommendations\n")
-        f.write("- **Service Patching:** Prioritize upgrading any services flagged with active CVEs (marked with 🔴).\n")
+        f.write("- **Service Patching:** Prioritize upgrading any services flagged with active CVEs (marked with CRITICAL).\n")
         f.write(
             "- **Port Minimization:** Disable or filter any exposed ports that are not strictly necessary for production operations.\n")
 
