@@ -10,11 +10,11 @@ def run_nmap_scan(target):
     print(f"[*] Starting reconnaissance on target: {target}")
     xml_file = f"scan_{target.replace('.', '_')}.xml"
 
-    # Running a Stealth SYN scan with Service Detection
+    # Running Stealth SYN scan
     command = ["nmap", "-sS", "-sV", "-T4", "-oX", xml_file, target]
 
     try:
-        # Note: We need 'sudo' in terminal for SYN scan
+        # Note: Needs sudo for SYN scan
         subprocess.run(command, check=True, stdout=subprocess.DEVNULL)
         print(f"[+] Nmap scan complete. Raw data saved to {xml_file}")
         return xml_file
