@@ -56,7 +56,7 @@ def parse_nmap_xml(xml_file):
     return open_ports
 
 
-# ================= NEW: VULNERABILITY API LOOKUP ENGINE =================
+#API database lookup
 def fetch_cves_for_service(product, version):
     """
     Queries Shodan's free CVEDB API to check for public CVEs
@@ -65,8 +65,7 @@ def fetch_cves_for_service(product, version):
     if not product or not version:
         return []
 
-    # We build a CPE (Common Platform Enumeration) string.
-    # This is a standardized way of saying: "Software Product : Version"
+
     cpe = f"cpe:2.3:a::{product.lower()}:{version.lower()}"
     api_url = f"https://cvedb.shodan.io/cves?cpe23={cpe}"
 
@@ -76,7 +75,7 @@ def fetch_cves_for_service(product, version):
 
         if response.status_code == 200:
             data = response.json()
-            # Extract up to 3 major vulnerabilities to keep our report clean
+            #Extracting only upto 3 Major Vulnerabilities
             cves = []
             matches = data.get("matches", [])
             for item in matches[:3]:
@@ -92,7 +91,7 @@ def fetch_cves_for_service(product, version):
     return []
 
 
-# =========================================================================
+
 
 def generate_markdown_report(target, open_ports):
     report_name = f"Recon_Report_{target.replace('.', '_')}.md"
@@ -121,9 +120,9 @@ def generate_markdown_report(target, open_ports):
             if cve_list:
                 cve_details = ""
                 for cve in cve_list:
-                    cve_details += f"🔴 **{cve['id']}** (CVSS: {cve['severity']})<br>*{cve['summary'][:100]}...*<br><br>"
+                    cve_details += f"CRITICAL **{cve['id']}** (CVSS: {cve['severity']})<br>*{cve['summary'][:100]}...*<br><br>"
             else:
-                cve_details = "🟢 No immediate CVEs found in quick query."
+                cve_details = "SAFE No immediate CVEs found in quick query."
 
             f.write(f"| {p['port']} | {p['protocol'].upper()} | {p['service']} | {version_text} | {cve_details} |\n")
 
