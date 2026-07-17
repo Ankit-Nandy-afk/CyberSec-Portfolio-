@@ -39,6 +39,5 @@ Here is a breakdown of what I am working on:
 
 ## ~ Important Disclaimer
 
-## Important Disclaimer
 
 All game-related scripts and reverse engineering research documented in this repository were focused strictly on **client-side analysis** (local memory states and local packet structures). This work was conducted purely for educational validation to understand runtime instrumentation and network protocols. My testing was explicitly designed to be non-disruptive, ensuring zero impact on live server infrastructure, competitive integrity, or the experience of other players in the ecosystem.
