@@ -1,43 +1,43 @@
-# CyberSec Portfolio 🔐
-A portfolio showcasing my Cybersecurity journey — projects, write-ups, and learning notes.
+# CyberSec Portfolio
 
-![Portfolio Banner](images/banner.png)
+![Python](https://img.shields.io/badge/Language-Python-blue?style=flat-square)
+![Lua](https://img.shields.io/badge/Language-Lua-purple?style=flat-square)
+![Linux](https://img.shields.io/badge/OS-Linux-lightgrey?style=flat-square)
+![Field](https://img.shields.io/badge/Focus-Reverse%20Engineering%20%26%20CTFs-red?style=flat-square)
 
-[![GitHub repo size](https://img.shields.io/github/repo-size/Ankit-Nandy-afk/CyberSec-Portfolio-?style=flat)](https://github.com/Ankit-Nandy-afk/CyberSec-Portfolio-)
-[![Top Language](https://img.shields.io/github/languages/top/Ankit-Nandy-afk/CyberSec-Portfolio-?style=flat)]()
-[![Last Commit](https://img.shields.io/github/last-commit/Ankit-Nandy-afk/CyberSec-Portfolio-?style=flat)]()
+Welcome to my cybersecurity journey. This repository is where I document my hands-on projects, automation scripts, and things I learn as I dive deeper into the security field.
 
-## Table of Contents
-- [About](#about)
-- [Projects](#projects)
-- [How to view locally](#how-to-view-locally)
-- [Screenshots](#screenshots)
-- [Contact](#contact)
+## How I Got  Into This Field: 
 
-## About
-Short one-liner describing the portfolio and your goals (e.g., "Logging my progress in penetration testing, CTF writeups, and security tooling.").
+My entire interest in cybersecurity started because of video games. I wasn't just satisfied with playing them—I wanted to know how they worked under the hood. 
 
-## Projects
-### Project Name — quick description
-- What it does
-- Tech / tools used
-- Link: `projects/project-name/` (or a GitHub Pages link)
-
-Repeat for 2–4 featured projects. Keep each entry 1–2 lines and include a link to the folder with full writeup.
-
-## How to view locally
-1. Clone: `git clone https://github.com/Ankit-Nandy-afk/CyberSec-Portfolio-.git`
-2. Open the repo in PyCharm, or serve the site if using GitHub Pages / MkDocs.
-
-## Screenshots
-Add screenshots in `images/` and reference them here:
-![Example screenshot](images/example.png)
-
-Tip: Use a GIF for short demos — they grab attention.
-
-## Contact
-- Email: your@email
-- LinkedIn: [Your Name](https://linkedin.com/in/your-profile)
+I started digging into game memory, figuring out how data was handled in RAM, and finding exploits in client-side game logic. Writing Lua scripts to manipulate games and reverse-engineering binary states was my first real introduction to low-level software behavior. That spark of curiosity—wanting to break things apart to see how they work—is exactly what drove me to transition into serious cybersecurity, networking, and automation.
 
 ---
-If you want a nicer site, I can convert this repo to an MkDocs site (material) or a simple GitHub Pages site and add a navigation menu and nicer CSS.
+
+## Repository Structure (Subjects to change)
+
+Here is a breakdown of what I am working on:
+
+### ~ Projects
+* **Languages used :** Python 
+* **What it is:** All the projects I will be working on and creating will be stored here.
+
+
+### ~ Capture-The-Flag
+* **Focus:** Documentations of All the Capture-The-Flags I have and will be participating in.
+* **What it is:** My progressive solutions and notes for the OverTheWire Bandit wargame. This folder tracks my understanding of the Linux CLI, file permissions, shell piping, and basic privilege escalation techniques.
+
+### ~ Game-Exploits-and-Scripts (Adding Soon)
+* **Language:** Lua / Assembly Notes
+* **What it is:** A collection of scripts and documentation from my game hacking research. It includes memory pointer scans, runtime manipulation scripts, and reverse engineering notes on how I bypassed or manipulated game logic.
+
+### ~ My Certificates
+* Documentation of my formal training, courses, and certifications as I validate my skills along this learning path.
+
+---
+
+## ~ Important Disclaimer
+
+
+All game-related scripts and reverse engineering research documented in this repository were focused strictly on **client-side analysis** (local memory states and local packet structures). This work was conducted purely for educational validation to understand runtime instrumentation and network protocols. My testing was explicitly designed to be non-disruptive, ensuring zero impact on live server infrastructure, competitive integrity, or the experience of other players in the ecosystem.
