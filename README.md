@@ -47,7 +47,7 @@ Transitioning from Windows to Linux often comes with configuration friction. **b
 
 ---
 
-## Organizations I Have Worked In
+## Organizations I Am Working In 
 
 ### [Bluelearn](https://github.com/bluelearn-org/bluelearn)
 > **Free knowledge, structured from the ground up.**  
