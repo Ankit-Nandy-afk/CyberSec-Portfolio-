@@ -1,43 +1,63 @@
-# CyberSec Portfolio
+# CyberSec & Systems Portfolio
 
-![Python](https://img.shields.io/badge/Language-Python-blue?style=flat-square)
-![Lua](https://img.shields.io/badge/Language-Lua-purple?style=flat-square)
-![Linux](https://img.shields.io/badge/OS-Linux-lightgrey?style=flat-square)
-![Field](https://img.shields.io/badge/Focus-Reverse%20Engineering%20%26%20CTFs-red?style=flat-square)
+<p align="center">
+  <img src="https://img.shields.io/badge/Focus-Low--Level%20Security%20%26%20Linux%20Tooling-red?style=flat-square&logo=linux" alt="Focus" />
+  <img src="https://img.shields.io/badge/Languages-Rust%20%7C%20Python%20%7C%20Java%20%7C%20Bash-blue?style=flat-square" alt="Languages" />
+  <img src="https://img.shields.io/badge/OS-Linux%20%28Arch--based%2FCachyOS%29-lightgrey?style=flat-square&logo=archlinux" alt="OS" />
+</p>
 
-Welcome to my cybersecurity journey. This repository is where I document my hands-on projects, automation scripts, and things I learn as I dive deeper into the security field.
-
-## How I Got  Into This Field: 
-
-My entire interest in cybersecurity started because of video games. I wasn't just satisfied with playing them—I wanted to know how they worked under the hood. 
-
-I started digging into game memory, figuring out how data was handled in RAM, and finding exploits in client-side game logic. Writing Lua scripts to manipulate games and reverse-engineering binary states was my first real introduction to low-level software behavior. That spark of curiosity—wanting to break things apart to see how they work—is exactly what drove me to transition into serious cybersecurity, networking, and automation.
+Welcome to my cybersecurity and systems engineering portfolio. This repository documents my hands-on security research, CTF writeups, automation tooling, and low-level Linux projects.
 
 ---
 
-## Repository Structure (Subjects to change)
+## 👨‍💻 About Me
 
-Here is a breakdown of what I am working on:
+My passion for cybersecurity is driven by a curiosity about low-level software behavior, system internals, and network security. I focus on understanding how binaries operate in memory, auditing application security, and building developer tooling for Linux ecosystems.
 
-### ~ Projects
-* **Languages used :** Python 
-* **What it is:** All the projects I will be working on and creating will be stored here.
-
-
-### ~ Capture-The-Flag
-* **Focus:** Documentations of All the Capture-The-Flags I have and will be participating in.
-* **What it is:** My progressive solutions and notes for the OverTheWire Bandit wargame. This folder tracks my understanding of the Linux CLI, file permissions, shell piping, and basic privilege escalation techniques.
-
-### ~ Game-Exploits-and-Scripts (Adding Soon)
-* **Language:** Lua / Assembly Notes
-* **What it is:** A collection of scripts and documentation from my game hacking research. It includes memory pointer scans, runtime manipulation scripts, and reverse engineering notes on how I bypassed or manipulated game logic.
-
-### ~ My Certificates
-* Documentation of my formal training, courses, and certifications as I validate my skills along this learning path.
+- **Security & Privacy Lead / Director** at [**Bluelearn**](https://github.com/bluelearn-org/bluelearn) — Overseeing platform security, rate-limiting middleware architecture, input sanitization, and infrastructure auditing.
+- **Creator** at [**briDge**](https://github.com/brRige) — Building open-source Linux tooling to make software execution and system isolation seamless for Windows switchers.
 
 ---
 
-## ~ Important Disclaimer
+## 🛠️ Organizations & Ecosystems
 
+### 📚 [Bluelearn](https://github.com/bluelearn-org/bluelearn)
+> **Free knowledge, structured from the ground up.**  
+> A non-profit, open-source education platform built around a prerequisite graph of concepts.
 
-All game-related scripts and reverse engineering research documented in this repository were focused strictly on **client-side analysis** (local memory states and local packet structures). This work was conducted purely for educational validation to understand runtime instrumentation and network protocols. My testing was explicitly designed to be non-disruptive, ensuring zero impact on live server infrastructure, competitive integrity, or the experience of other players in the ecosystem.
+* **Role:** Director & Security / Privacy Lead
+* **Security Focus:**
+  * Performing security audits and dynamic vulnerability assessments across web APIs and microservices.
+  * Designing rate-limiting algorithms, middleware sanitization layers, and Cloudflare WAF configurations.
+  * Maintaining repository security policies, dependency audits, and authentication workflows.
+
+---
+
+### 🌉 [briDge](https://github.com/brRige)
+> **Making Linux feel seamless for Windows switchers.**
+
+Transitioning from Windows to Linux often comes with configuration friction. **briDge** builds straightforward CLI and GUI tools to remove these barriers.
+
+#### Core Launchers
+| Project | Description | Status |
+| :--- | :--- | :--- |
+| **[wex](https://github.com/brRige/wex)** | A simplified Linux launcher for `.exe` applications. | Active Development |
+| **pex** | A high-performance executable launcher optimized specifically for Windows applications on Linux. | Planned / Up Next |
+
+#### Security & Tooling
+| Project | Description | Status |
+| :--- | :--- | :--- |
+| **[patch-view](https://github.com/brRige/pvw)** | A lightweight CLI tool to inspect binary headers, security flags, and executable dependencies before runtime. | Active Development |
+| **wine-guard** | Sandbox and permission auditor to prevent Wine/Proton applications from accessing sensitive system directories. | Planned |
+| **net-tracer** | Lightweight socket and network traffic inspector to monitor outbound executable connections. | Planned |
+
+---
+
+## 🗂️ Repository Structure
+
+```text
+.
+├── 📁 projects/              # Security automation scripts, binary inspection tools, & Rust/Python utilities
+├── 📁 capture-the-flag/      # Writeups, notes, and solutions for CTF wargames (OverTheWire Bandit, etc.)
+├── 📁 networking-and-labs/   # Packet analysis, network monitoring, and system configuration notes
+└── 📁 certs-and-training/    # Documentation of formal security certifications and completed coursework
