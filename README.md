@@ -10,7 +10,7 @@ Welcome to my cybersecurity and systems engineering portfolio. This repository d
 
 ---
 
-## 👨‍💻 About Me
+##  About Me
 
 My passion for cybersecurity is driven by a curiosity about low-level software behavior, system internals, and network security. I focus on understanding how binaries operate in memory, auditing application security, and building developer tooling for Linux ecosystems.
 
@@ -33,7 +33,7 @@ My passion for cybersecurity is driven by a curiosity about low-level software b
 
 ---
 
-### 🌉 [briDge](https://github.com/brRige)
+###  [briDge](https://github.com/brRige)
 > **Making Linux feel seamless for Windows switchers.**
 
 Transitioning from Windows to Linux often comes with configuration friction. **briDge** builds straightforward CLI and GUI tools to remove these barriers.
