@@ -21,7 +21,7 @@ My passion for cybersecurity is driven by a curiosity about low-level software b
 
 ## 🛠️ Organizations & Ecosystems
 
-### 📚 [Bluelearn](https://github.com/bluelearn-org/bluelearn)
+### [Bluelearn](https://github.com/bluelearn-org/bluelearn)
 > **Free knowledge, structured from the ground up.**  
 > A non-profit, open-source education platform built around a prerequisite graph of concepts.
 
