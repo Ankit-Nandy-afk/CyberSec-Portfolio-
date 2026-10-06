@@ -19,10 +19,10 @@ Rust is my primary language for systems programming, low-level binary inspection
 
 ## About Me
 
-My passion for cybersecurity is driven by a curiosity about low-level software behavior, system internals, binary analysis, and network security. I focus on understanding how binaries operate in memory, auditing application security, and building developer tooling for Linux ecosystems.
+I'm obsessed with figuring out how software works under the hood. Most of my time is spent digging into low-level binaries, finding security flaws, and building fast tools for Linux.
 
 - **Creator** at [**briDge**](https://github.com/brRige) — Building open-source Linux tooling in Rust to make software execution and system isolation seamless for Windows switchers.
-- **Security & Privacy Lead / Director** at [**Bluelearn**](https://github.com/bluelearn-org/bluelearn) — Overseeing platform security, rate-limiting middleware architecture, input sanitization, and infrastructure auditing.
+- **Security & Privacy Lead / Director** at [**Bluelearn**](https://github.com/bluelearn-org/bluelearn) — Managing security and infrastructure for an open-source learning platform.
 
 ---
 
