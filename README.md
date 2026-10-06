@@ -26,7 +26,7 @@ I'm obsessed with figuring out how software works under the hood. Most of my tim
 
 ---
 
-## MY ORGANIZATIONN : Ecosystem & Projects: [briDge](https://github.com/brRige)
+## MY ORGANIZATION : Ecosystem & Projects: [briDge](https://github.com/brRige)
 
 > **Making Linux feel seamless for Windows switchers.**
 
