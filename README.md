@@ -11,7 +11,7 @@ Welcome to my cybersecurity and systems engineering portfolio. This repository d
 
 ---
 
-## Primary Language: Rust
+## Primary Language: RUST
 
 Rust is my primary language for systems programming, low-level binary inspection, and security tooling. I build high-performance, memory-safe utilities in Rust, supported by Python, Java, and Bash for scripting and secondary tooling.
 
