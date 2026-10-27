@@ -42,8 +42,8 @@ Transitioning from Windows to Linux often comes with configuration friction. **b
 | Project | Description | Status |
 | :--- | :--- | :--- |
 | **[patch-view](https://github.com/brRige/pvw)** | A lightweight CLI tool written in Rust to inspect binary headers, security flags, and executable dependencies before runtime. | Active Development |
-| **wine-guard** | Sandbox and permission auditor to prevent Wine/Proton applications from accessing sensitive system directories. | Planned |
-| **net-tracer** | Lightweight socket and network traffic inspector to monitor outbound executable connections. | Planned |
+| **ironkey** | A Password manager tool with Proper Encryption. | Planned |
+
 
 ---
 
