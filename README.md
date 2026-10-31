@@ -35,7 +35,7 @@ Transitioning from Windows to Linux often comes with configuration friction. **b
 ### Core Launchers
 | Project | Description | Status |
 | :--- | :--- | :--- |
-| **[wex](https://github.com/brRige/wex)** | A simplified Linux launcher for `.exe` applications built in Rust. | Active Development |
+| **[wex](https://github.com/brRige/wex)** | A simplified Linux launcher for `.exe` applications built in Rust. | Development Finished/Updates will be given whenever necessary |
 | **pex** | A high-performance executable launcher optimized specifically for Windows applications on Linux. | Planned / Up Next |
 
 ### Security & Tooling
